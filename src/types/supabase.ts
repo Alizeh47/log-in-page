@@ -1,13 +1,38 @@
 export type Database = {
   public: {
     Tables: {
-      // Add your Supabase tables here
+      users: {
+        Row: {
+          id: string
+          email: string
+          full_name: string | null
+          avatar_url: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          email: string
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
     }
     Views: {
-      // Add your views here
+      [_ in never]: never
     }
     Functions: {
-      // Add your functions here
+      [_ in never]: never
     }
   }
 } 
