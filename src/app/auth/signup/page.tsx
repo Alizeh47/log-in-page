@@ -36,9 +36,9 @@ export default function SignUpPage() {
       {/* Left side - Illustration */}
       <div className="hidden lg:block lg:w-1/2 bg-[#f5f5f0] relative">
         <div className="h-full flex items-center justify-center">
-          <div className="flex items-center gap-8 px-12">
+          <div className="flex items-center gap-10 px-16">
             <div className="flex-1 text-left pr-4">
-              <h1 className="text-5xl font-medium leading-tight font-['Barrio']">
+              <h1 className="text-5xl font-bold leading-tight font-['Barrio']">
                 <span className="block bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent">
                   Join Our Community
                 </span>
@@ -47,13 +47,13 @@ export default function SignUpPage() {
                 </span>
               </h1>
             </div>
-            <div className="relative w-[400px] h-[400px] mb-12">
+            <div className="relative w-[350px] h-[400px] mb-24">
               <Image
                 src="/signup-illustration.png"
                 alt="Sign up illustration"
-                width={350}
+                width={400}
                 height={400}
-                className="object-contain mix-blend-multiply scale-110"
+                className="object-contain mix-blend-multiply scale-105"
                 priority
               />
             </div>
@@ -89,7 +89,7 @@ export default function SignUpPage() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
+                  className="pl-10 text-black placeholder:text-black/60 normal-case"
                   placeholder="Enter your full name"
                   disabled={isLoading}
                   required
@@ -110,7 +110,7 @@ export default function SignUpPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
+                  className="pl-10 text-black placeholder:text-black/60 normal-case"
                   placeholder="Enter your email"
                   disabled={isLoading}
                   required
@@ -131,7 +131,7 @@ export default function SignUpPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
+                  className="pl-10 text-black placeholder:text-black/60 normal-case"
                   placeholder="Create a password"
                   disabled={isLoading}
                   required

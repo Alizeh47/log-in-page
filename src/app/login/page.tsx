@@ -37,7 +37,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right side - Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 border-l border-gray-200">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <h2 className="text-5xl font-bold font-['Barrio'] text-black">Welcome back</h2>

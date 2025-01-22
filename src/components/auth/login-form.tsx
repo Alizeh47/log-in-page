@@ -49,7 +49,7 @@ export default function LoginForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
+            className="pl-10 text-black placeholder:text-black/60 normal-case"
             placeholder="Enter your email"
             disabled={isLoading}
             required
@@ -70,7 +70,7 @@ export default function LoginForm() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
+            className="pl-10 text-black placeholder:text-black/60 normal-case"
             placeholder="Enter your password"
             disabled={isLoading}
             required
