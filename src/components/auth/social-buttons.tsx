@@ -15,8 +15,9 @@ export default function SocialButtons({ isLoading }: SocialButtonsProps) {
         type="button"
         disabled={isLoading}
         onClick={() => {/* Handle GitHub login */}}
+        className="font-['Barrio'] text-black border-black hover:bg-black/5"
       >
-        <Github className="mr-2 h-4 w-4" />
+        <Github className="mr-2 h-4 w-4 text-black" />
         GitHub
       </Button>
       <Button
@@ -24,8 +25,9 @@ export default function SocialButtons({ isLoading }: SocialButtonsProps) {
         type="button"
         disabled={isLoading}
         onClick={() => {/* Handle Twitter login */}}
+        className="font-['Barrio'] text-black border-black hover:bg-black/5"
       >
-        <Twitter className="mr-2 h-4 w-4" />
+        <Twitter className="mr-2 h-4 w-4 text-black" />
         Twitter
       </Button>
     </div>

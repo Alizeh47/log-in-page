@@ -1,6 +1,7 @@
 import LoginForm from '@/components/auth/login-form'
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { supabase } from '@/lib/supabase'
 
 export const metadata: Metadata = {
   title: 'Login | Simple Access',
@@ -39,8 +40,8 @@ export default function LoginPage() {
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
-            <h2 className="text-5xl font-bold font-['Barrio']">Welcome back</h2>
-            <p className="mt-3 text-gray-600">Please enter your details to sign in</p>
+            <h2 className="text-5xl font-bold font-['Barrio'] text-black">Welcome back</h2>
+            <p className="mt-3 text-black font-['Barrio']">Please enter your details to sign in</p>
           </div>
           <LoginForm />
         </div>

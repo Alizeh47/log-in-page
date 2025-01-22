@@ -25,18 +25,18 @@ export default function LoginForm() {
     <form onSubmit={onSubmit} className="space-y-6">
       {/* Email Input */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-700">
+        <label className="text-sm font-medium text-black font-['Barrio']">
           Email
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Mail className="h-5 w-5 text-gray-400" />
+            <Mail className="h-5 w-5 text-black" />
           </div>
           <Input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="pl-10"
+            className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
             placeholder="Enter your email"
             disabled={isLoading}
             required
@@ -46,18 +46,18 @@ export default function LoginForm() {
 
       {/* Password Input */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-700">
+        <label className="text-sm font-medium text-black font-['Barrio']">
           Password
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Lock className="h-5 w-5 text-gray-400" />
+            <Lock className="h-5 w-5 text-black" />
           </div>
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="pl-10"
+            className="pl-10 font-['Barrio'] text-black placeholder:text-black/60"
             placeholder="Enter your password"
             disabled={isLoading}
             required
@@ -67,7 +67,7 @@ export default function LoginForm() {
 
       {/* Forgot Password Link */}
       <div className="flex justify-end">
-        <a href="#" className="text-sm bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80">
+        <a href="#" className="text-sm bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']">
           Forgot your password?
         </a>
       </div>
@@ -75,7 +75,7 @@ export default function LoginForm() {
       {/* Sign In Button */}
       <Button
         type="submit"
-        className="w-full font-cinzel text-base"
+        className="w-full text-base font-['Barrio']"
         disabled={isLoading}
         variant="gradient"
       >
@@ -85,10 +85,10 @@ export default function LoginForm() {
       {/* Social Login Section */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
+          <span className="w-full border-t border-black" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+          <span className="bg-background px-2 text-black font-['Barrio']">
             Or continue with
           </span>
         </div>
@@ -98,9 +98,9 @@ export default function LoginForm() {
 
       {/* Sign Up Link */}
       <div className="text-center">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-black font-['Barrio']">
           Don't have an account?{' '}
-          <a href="#" className="bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80">
+          <a href="#" className="bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']">
             Sign up
           </a>
         </p>
