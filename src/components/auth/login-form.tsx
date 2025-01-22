@@ -5,17 +5,25 @@ import { Mail, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import SocialButtons from './social-buttons'
+import { useAuth } from '@/contexts/auth-context'
+import Link from 'next/link'
 
 export default function LoginForm() {
+  const { signIn } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
     setIsLoading(true)
+    setError(null)
+    
     try {
-      // Add authentication logic here
+      await signIn(email, password)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to sign in')
     } finally {
       setIsLoading(false)
     }
@@ -23,6 +31,11 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-6">
+      {error && (
+        <div className="p-3 text-sm text-red-500 bg-red-100 rounded-md">
+          {error}
+        </div>
+      )}
       {/* Email Input */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-black font-['Barrio']">
@@ -67,9 +80,12 @@ export default function LoginForm() {
 
       {/* Forgot Password Link */}
       <div className="flex justify-end">
-        <a href="#" className="text-sm bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']">
+        <Link 
+          href="/auth/forgot-password"
+          className="text-sm bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']"
+        >
           Forgot your password?
-        </a>
+        </Link>
       </div>
 
       {/* Sign In Button */}
@@ -100,9 +116,12 @@ export default function LoginForm() {
       <div className="text-center">
         <p className="text-sm text-black font-['Barrio']">
           Don't have an account?{' '}
-          <a href="#" className="bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']">
+          <Link
+            href="/auth/signup"
+            className="bg-gradient-to-r from-[#103249] to-[#000000] bg-clip-text text-transparent hover:opacity-80 font-['Barrio']"
+          >
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </form>
